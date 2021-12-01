@@ -4,12 +4,25 @@
 
 ### Cryptography: Communications in the presence of adversaries
 
+Communications
+
 - Scytale Cipher (Roman)
 - Enigma (1920-1940)
 - Asymmetric Cryptography (1976)
+
+Internet
+
 - TCP/IP & Ethernet (1974)
 - HTTP (1990)
 - SSL/TLS (1996)
+
+Organizations
+
+- 3com (1979)
+- Cisco (1984)
+- Amazon (1995)
+- PayPal (1998)
+- BitCoin? (2009)
 
 ### Failed Cryptographic Digital Currencies:
 
@@ -85,3 +98,55 @@ Trillion, $10^{12}$
 [^2]: https://www.sifma.org/wp-content/uploads/2021/07/CM-Fact-Book-2021-SIFMA.pdf
 [^3]: https://www.statista.com/statistics/1125923/global-market-value-of-gold/
 [^4]: https://fortune.com/2021/11/09/cryptocurrency-market-cap-3-trillion-bitcion-ether-shiba-inu/
+
+### What is the Role of Money?
+
+- Medium of **Exchange**
+  - Trade work for cash, trade cash for bread
+- **Store** of Value
+  - Stash some cash for later
+- **Unit** of Account
+  - Permits comparisons and meaningful interpretations
+
+### What is the Role of Finance?
+
+**Moving, Allocating & Pricing (evaluating):**
+
+- Money
+- Risk
+- Throughout the Economy (hourglass neck)
+
+### Financial Sector Challenges and Opportunities
+
+- Repeated crises and instability
+- Currency instabilities associated with unsound policies
+- Centralization concentrates risks & economic rents
+- Legacy payment systems
+- Clearing & settlement costs & counterparty risks
+- Financial inclusion (1 billion people underbanked)
+- Payment system costs: $1\%$ of Global GDP
+- Financial sector costs: $7.5\%$ of US GDP
+
+### Financial Sector Issues with Blockchain Technology
+
+- Performance, Scalability, & Efficiency
+- Privacy & Security
+- Interoperability
+- Governance
+- Commercial Use Cases
+- Public Policy & Legal Frameworks
+
+Technology itself can't deliver justice and equality.
+
+### Financial Sector Favors
+
+- permissioned blockchains (private)
+  - Known set of participants
+  - No proof-of-work or mining
+  - No need for a native currency
+  - Distributed database technology
+- permissionless blockchains (public)
+  - Unknown participants
+  - Security based on incentives
+  - Native currency
+  - Crypto-economics
