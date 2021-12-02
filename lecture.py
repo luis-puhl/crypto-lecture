@@ -8,6 +8,7 @@
 # Cada registro é um predicado de uma linha (char string).
 #   Amadeu transferiu 10 para Botelho por 2kg de uvas
 # O escrivão deve garantir que o saldo nunca é negativo
+from dataclasses import dataclass, field
 
 @dataclass
 class Block:
@@ -15,24 +16,24 @@ class Block:
     previous: int = 0
     nonce: int = 0
     id_hash: int = 0
-    @staticmethod
-    def mine(block: 'Block'):
-        """Change nonce until the id_hash ends with 3 zeroes"""
-        dataHash = hash(block.data)
-        previous = block.previous
-        nonce = block.nonce
+def mine(block: 'Block') -> 'Block':
+    """Change nonce until the id_hash ends with 3 zeroes"""
+    dataHash = hash(block.data)
+    previous = block.previous
+    nonce = block.nonce
+    id_hash = hash(dataHash + previous + nonce)
+    while id_hash == 0 or id_hash % 1000 != 0:
+        nonce = SystemRandom().randrange(10**8)
         id_hash = hash(dataHash + previous + nonce)
-        while id_hash == 0 or id_hash % 1000 != 0:
-            nonce = SystemRandom().randrange(10**8)
-            id_hash = hash(dataHash + previous + nonce)
-        return Block(block.data, previous, nonce, id_hash)
+    return Block(block.data, previous, nonce, id_hash)
 
 def Block_test():
-    print(Block.mine(Block()))
-    print(Block.mine(Block(b'123')))
+    print(mine(Block()))
+    print(mine(Block(b'123')))
 
 from random import shuffle
 from secrets import SystemRandom
+
 def keygen(N=10**8, salt_e=65537):
     '''Generate public and private keys from primes up to N.
 
@@ -96,8 +97,7 @@ def crypt_test():
     rcv = decrypt(n_public_key, d_private_key, send)
     assert rcv == msg
 
-from dataclasses import dataclass, field
-from collections.abc import Mapping, Set
+from collections.abc import Mapping, Set, Sequence
 
 @dataclass
 class Carteira:
@@ -106,7 +106,61 @@ class Carteira:
     chave_privada: int
     def __init__(self):
         self.chave, self.chave_privada, self.chave_e = keygen()
+    def __repr__(self) -> str:
+        return 'Carteira({:x})'.format(self.chave)
 
+class Endereco(int):
+    def __repr__(self):
+        return '{:x}'.format(self)
+
+from datetime import datetime, timezone
+import re
+
+@dataclass(frozen=True, order=True)
+class BalancoSimples:
+    proprietario: Endereco
+    valor: int
+    tempo: datetime = field(default_factory=lambda : datetime.now(timezone.utc) )
+    def __repr__(self) -> str:
+        return 'Balanco({:x},{},{})'.format(self.proprietario, self.valor, self.tempo.isoformat())
+    @staticmethod
+    def load(data: str) -> 'BalancoSimples':
+        m = re.match(r'Balanco\((\w+),(\d+),([^\)]+)\)', data)
+        if m is None:
+            return None
+        (p, v, t) = m.groups()
+        return BalancoSimples(int(p, 16), int(v), datetime.fromisoformat(t))
+    
+def BalancoSimples_serdes_test():
+    a = BalancoSimples(Endereco(20), 1)
+    serial = repr(a)
+    line = serial.encode('UTF-8')
+    deline = line.decode('UTF-8')
+    m = re.match(r'Balanco\((\w+),(\d+),([^\)]+)\)', deline)
+    g = m.groups()
+    b = BalancoSimples.load(deline)
+    assert a.proprietario == b.proprietario, '{}'.format({a, serial, line, deline, m, g, b})
+    assert a.valor == b.valor
+    assert a.tempo == b.tempo
+
+def balanco(proprietario: Endereco, seq: Sequence[BalancoSimples]) -> int:
+    """Novo balanço, que é calculado em um período, mas aqui auxilia na validação da transação"""
+    balanco = 0
+    temporalSeq: Sequence[BalancoSimples] = sorted(seq, key='tempo')
+    for t in temporalSeq:
+        if t.proprietario == proprietario:
+            balanco += t.valor
+    return balanco
+
+def ledger_test():
+    alice = Carteira()
+    bob = Carteira()
+    print(alice, bob)
+    t1 = BalancoSimples(Endereco(alice.chave), 1)
+    t2 = BalancoSimples(Endereco(bob.chave), 0.5)
+    t3 = BalancoSimples(Endereco(alice.chave), -0.5)
+    transactions = [t1, t2, t3]
+    print(transactions)
 
 @dataclass
 class Balanco:
@@ -114,7 +168,7 @@ class Balanco:
     """Chave pública do proprietário"""
     balanco_anterior: int = 0
     """id_hash do registro anterior"""
-    transacao: int = 0
+    valor_transacao: int = 0
     """Valor da transação"""
     balanco: int = 0
     """Novo balanço"""
@@ -197,4 +251,6 @@ def bloco_test():
 if __name__ == "__main__":
     crypt_test()
     Block_test()
+    BalancoSimples_serdes_test()
+    ledger_test()
     # bloco_test()

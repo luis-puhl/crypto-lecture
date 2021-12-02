@@ -140,12 +140,12 @@ Technology itself can't deliver justice and equality.
 
 ### Financial Sector Favors
 
-- permissioned blockchains (private)
+- Permissioned blockchains (private)
   - Known set of participants
   - No proof-of-work or mining
   - No need for a native currency
   - Distributed database technology
-- permissionless blockchains (public)
+- Permissionless blockchains (public)
   - Unknown participants
   - Security based on incentives
   - Native currency
