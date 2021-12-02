@@ -130,7 +130,7 @@ class BalancoSimples:
             return None
         (p, v, t) = m.groups()
         return BalancoSimples(int(p, 16), int(v), datetime.fromisoformat(t))
-    
+
 def BalancoSimples_serdes_test():
     a = BalancoSimples(Endereco(20), 1)
     serial = repr(a)
