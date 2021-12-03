@@ -130,6 +130,15 @@ class BalancoSimples:
             return None
         (p, v, t) = m.groups()
         return BalancoSimples(int(p, 16), int(v), datetime.fromisoformat(t))
+    @staticmethod
+    def balanco(proprietario: Endereco, seq: Sequence['BalancoSimples']) -> int:
+        """Novo balanço, que é calculado em um período, mas aqui auxilia na validação da transação"""
+        balanco = 0
+        temporalSeq: Sequence[BalancoSimples] = sorted(seq, key='tempo')
+        for t in temporalSeq:
+            if t.proprietario == proprietario:
+                balanco += t.valor
+        return balanco
 
 def BalancoSimples_serdes_test():
     a = BalancoSimples(Endereco(20), 1)
@@ -143,16 +152,7 @@ def BalancoSimples_serdes_test():
     assert a.valor == b.valor
     assert a.tempo == b.tempo
 
-def balanco(proprietario: Endereco, seq: Sequence[BalancoSimples]) -> int:
-    """Novo balanço, que é calculado em um período, mas aqui auxilia na validação da transação"""
-    balanco = 0
-    temporalSeq: Sequence[BalancoSimples] = sorted(seq, key='tempo')
-    for t in temporalSeq:
-        if t.proprietario == proprietario:
-            balanco += t.valor
-    return balanco
-
-def ledger_test():
+def BalancoSimples_ledger_test():
     alice = Carteira()
     bob = Carteira()
     print(alice, bob)
