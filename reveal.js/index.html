@@ -41,7 +41,12 @@
 					<ol>
 						<li>Introdução à Criptomoeda</li>
 						<ul>
-							<li>Notas do curso <span class="italic">MIT 15.S12 Blockchain and Money</span></li>
+							<li>
+								Notas do Curso 
+								<a href="https://ocw.mit.edu/courses/sloan-school-of-management/15-s12-blockchain-and-money-fall-2018/" class="italic">
+								MIT 15.S12 Blockchain and Money, Fall 2018
+								</a>
+							</li>
 						</ul>
 						<li>Mercado atual</li>
 						<li>Implementação</li>
@@ -58,7 +63,7 @@
 							<h3 data-id="Criptografia">Criptografia</h3>
 						</div>
 						<div class="flex-auto">
-							<h3 data-id="Dinheiro">Dinheiro</h3>
+							<h3 data-id="Moeda">Moeda</h3>
 						</div>
 					</div>
 				</section>
@@ -73,7 +78,7 @@
 							<ul class="fragment">
 								<li data-id="César">Cifra de César (-50)
 									<a href="https://www.math.stonybrook.edu/~moira/mat331-spr10/papers/1987%20LucianoCryptology%20From%20Caesar%20Ciphers%20to.pdf">[1]</a>
-									<div class="fragment shrink">
+									<div data-id="César FN" class="fragment">
 										$$
 										\begin{aligned}
 										E_{n}(x) &amp; =(x+n)\mod {26}\\
@@ -81,15 +86,42 @@
 										\end{aligned}
 										$$
 									</div>
-									<pre class="fragment"><code>Plain  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-Cipher X Y Z A B C D E F G H I J K L M N O P Q R S T U V W</code></pre>
-									<pre class="fragment">Plaintext:  THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+								</li>
+							</ul>
+						</div>
+						<div class="flex-auto">
+							<h3 data-id="Moeda">Moeda</h3>
+						</div>
+					</div>
+				</section>
+				<section slide-title="Introdução" data-auto-animate data-transition="zoom" >
+					<h2 data-id="crypto" class="inset-x-0 top-0"><span class="underline">Cripto</span> <span class="underline">moeda</span></h2>
+					<div class="flex">
+						<div class="flex-auto">
+							<h3 data-id="Criptografia">Criptografia</h3>
+							<p>
+								Comunicação na presença de adversários
+							</p>
+							<ul>
+								<li data-id="César">Cifra de César (-50)
+									<a href="https://www.math.stonybrook.edu/~moira/mat331-spr10/papers/1987%20LucianoCryptology%20From%20Caesar%20Ciphers%20to.pdf">[1]</a>
+									<div data-transition="zoom" data-id="César FN" style="font-size: 0.7rem;">
+										$$
+										\begin{aligned}
+										E_{n}(x) &amp; =(x+n)\mod {26}\\
+										D_{n}(x) &amp; =(x-n)\mod {26}
+										\end{aligned}
+										$$
+									</div>
+									<pre style="width: 100%;" class="fragment">Plain  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+Cipher X Y Z A B C D E F G H I J K L M N O P Q R S T U V W</pre>
+									<pre style="width: 100%;" class="fragment">Plaintext:  THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
 Ciphertext: QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD</pre>
 								</li>
 							</ul>
 						</div>
 						<div class="flex-auto">
-							<h3 data-id="Dinheiro">Dinheiro</h3>
+							<h3 data-id="Moeda">Moeda</h3>
 						</div>
 					</div>
 				</section>
@@ -107,13 +139,13 @@ Ciphertext: QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD</pre>
 							</ul>
 						</div>
 						<div class="flex-auto">
-							<h3 data-id="Dinheiro">Dinheiro</h3>
+							<h3 data-id="Moeda">Moeda</h3>
 						</div>
 					</div>
 				</section>
 				<section slide-title="Enigma" data-auto-animate>
 					<h4>Máquina Enigma</h4>
-					<img style="margin: auto; max-height: 70vh; max-width: 70vw;"
+					<img style="margin: auto; max-height: 50vh; max-width: 70vw;"
 					alt="Enigma (crittografia) - Museo scienza e tecnologia Milano"
 					data-src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg"
 					srcset="
@@ -140,37 +172,122 @@ Ciphertext: QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD</pre>
 								Comunicação na presença de adversários
 							</p>
 							<ul>
-								<li>Cifra de César</li>
-								<li>Máquina Enigma</li>
-								<li>Criptografia Assimétrica</li>
+								<li data-id="César">Cifra de César (-50)</li>
+								<li>Máquina Enigma (1920-1940)</li>
+								<li class="fragment">Criptografia Assimétrica (1976)</li>
 							</ul>
 						</div>
 						<div class="flex-auto">
-							<h3 data-id="Dinheiro">Dinheiro</h3>
+							<h3 data-id="Moeda">Moeda</h3>
 						</div>
 					</div>
 				</section>
-				<section slide-title="Introdução" data-auto-animate>
-					<h2 data-id="crypto">Criptomoeda?!</h2>
-					<ul>
-						<li>Criptografia</li>
-						<ul>
-							<li>Comunicação na presença de adversários</li>
-							<li>Cifra de César</li>
-							<li>Máquina Enigma</li>
-							<li>Criptografia Assimétrica</li>
-						</ul>
-						<li>Dinheiro</li>
-						<li>Contabilidade</li>
-						<li>Sistemas Distribuídos</li>
-					</ul>
+				<section slide-title="Asymmetric Cryptography" data-auto-animate>
+					<h4>Criptografia Assimétrica (1976)</h4>
+					<style>
+						img.emoji {
+							max-width: 100px;
+							max-height: 100px;
+						}
+					</style>
+					<div class="flex items-center">
+						<img alt="Bob" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/child_1f9d2.png">
+						<img alt="Public Key" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/old-key_1f5dd-fe0f.png">
+						<img alt="Private Key" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/key_1f511.png">
+					</div>
+					<div class="flex items-center">
+						<img alt="Alice" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/older-person_1f9d3.png">
+						<img alt="Message" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/love-letter_1f48c.png">
+						<img alt="Public Key" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/old-key_1f5dd-fe0f.png">
+						<img alt="Trancado" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/locked_1f512.png">
+					</div>
+					<div class="flex items-center">
+						<img alt="Bob" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/child_1f9d2.png">
+						<img alt="Private Key" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/key_1f511.png">
+						<img alt="Trancado" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/locked_1f512.png">
+						<img alt="Message" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/love-letter_1f48c.png">
+					</div>
+					<div class="flex items-center">
+						<img alt="Charlie" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/technologist_1f9d1-200d-1f4bb.png">
+						<img alt="Trancado" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/locked_1f512.png">
+						<img alt="Sad Charlie" class="emoji fragment flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/person-shrugging_1f937.png">
+					</div>
 				</section>
-				<section slide-title="Notas do MIT">
-					<h2>
-						Notas do Curso 
-						<a href="https://ocw.mit.edu/courses/sloan-school-of-management/15-s12-blockchain-and-money-fall-2018/" class="italic">
-						MIT 15.S12 Blockchain and Money, Fall 2018
-						</a></h2>
+				<section slide-title="Dinheiro" data-auto-animate>
+					<h2 data-id="crypto" class="inset-x-0 top-0"><span class="underline">Cripto</span> <span class="underline">moeda</span></h2>
+					<div class="flex">
+						<div class="flex-auto text-sm">
+							<h3 data-id="Criptografia" class="text-sm">Criptografia</h3>
+							<!-- <p>
+								Comunicação na presença de adversários
+							</p>
+							<ul>
+								<li>Cifra de César</li>
+								<li>Máquina Enigma</li>
+								<li>Criptografia Assimétrica</li>
+							</ul> -->
+						</div>
+						<div class="flex-auto">
+							<h3 data-id="Moeda">Moeda</h3>
+							<ul>
+								<li class="fragment">Dinheiro
+									<!-- ## What is the Role of Money?
+
+									- Medium of **Exchange**
+									- Trade work for cash, trade cash for bread
+									- **Store** of Value
+									- Stash some cash for later
+									- **Unit** of Account
+									- Permits comparisons and meaningful interpretations -->
+									<p class="fragment">Qual o papel social do dinheiro?</p>
+									<ul>
+										<li class="fragment">
+											<div class="flex items-center">
+												<p class="flex-auto">Meio de troca</p>
+												<img style="max-width: 15%;" class="flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/313/coin_1fa99.png" alt="moeda">
+												<img style="max-width: 15%;" class="flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/313/left-right-arrow_2194-fe0f.png" alt="troca">
+												<img style="max-width: 15%;" class="flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/313/bread_1f35e.png" alt="pão">
+											</div>
+										</li>
+										<li class="fragment">
+											<div class="flex items-center">
+												<p class="flex-auto">Armazenamento de valor</p>
+												<img style="max-width: 15%;" class="flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/313/money-bag_1f4b0.png" alt="saco de dinheiro">
+											</div>
+										</li>
+										<li class="fragment">
+											<div class="flex items-center">
+												<p class="flex-auto">Unidade de contabilidade</p>
+												<img style="max-width: 15%;" class="flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/313/abacus_1f9ee.png" alt="abaco">
+												<img style="max-width: 15%;" class="flex-auto" src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/google/313/chart-increasing_1f4c8.png" alt="estatistica">
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section slide-title="Contabilidade" data-auto-animate>
+					<h4>Contabilidade</h4>
+					<p class="fragment">Qual o papel social da Contabilidade e Finanças?</p>
+					<!--## What is the Role of Finance?
+
+					**Moving, Allocating & Pricing (evaluating):**
+					
+					- Money
+					- Risk
+					- Throughout the Economy (hourglass neck)-->
+					<ul>
+						<li class="fragment">Mover</li>
+						<li class="fragment">Alocar</li>
+						<li class="fragment">Precificar (Avaliar)</li>
+					</ul>
+					<ul>
+						<li class="fragment">Dinheiro</li>
+						<li class="fragment">Risco</li>
+					</ul>
+					<p class="fragment">Por todo sistema economico.</p>
 				</section>
 				<section></section>
 				
