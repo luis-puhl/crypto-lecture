@@ -436,7 +436,41 @@ The paper is available at: http://www.bitcoin.org/bitcoin.pdf</pre>
 				</section>
 
 				<section>
+					<h1>Mercado Atual</h1>
+				</section>
+				
+				<section data-markdown>
+					# Implementação
+
+					Blockchain é de simples Implementação:
 					
+					> Uma lista encadeada cujo ponteiro para o elemento anterior é um $hash$.
+				</section>
+				<section data-auto-animate>
+					<h2>Implementação Blockchain</h2>
+					<pre><code data-line-numbers="2-6|7-8|9-12|14|15|13|16">@dataclass
+class Block:
+	data: bytes = b''
+	previous: int = 0
+	nonce: int = 0
+	id_hash: int = 0
+def mine_proof_of_work(block: 'Block') -> 'Block':
+	"""Change nonce until the id_hash ends with 3 zeroes"""
+	dataHash = hash(block.data)
+	previous = block.previous
+	nonce = block.nonce
+	id_hash = hash(dataHash + previous + nonce)
+	while id_hash == 0 or id_hash % 1000 != 0:
+		nonce = SystemRandom().randrange(10**8)
+		id_hash = hash(dataHash + previous + nonce)
+	return Block(block.data, previous, nonce, id_hash)</code></pre>
+				</section>
+				<section data-auto-animate>
+					<h2>Implementação Ledger (livro-caixa)</h2>
+				</section>
+				
+				<section>
+					<h1>Discussão</h1>
 				</section>
 			</div>
 		</div>
