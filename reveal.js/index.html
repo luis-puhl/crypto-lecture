@@ -4,24 +4,205 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Lecture on Crypto and Currency</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
-
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="css/tailwind.min.css">
+		<style>
+			:root {
+				--r-heading-text-transform: none;
+				font-size: 40px;
+				--r-heading1-size: 2.0rem;
+				--r-heading2-size: 1.5rem;
+				--r-heading3-size: 1.25rem;
+				--r-heading4-size: 1.0rem;
+			}
+			h1.font-serif {
+				font-family: ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section slide-title="Título">
+					<h1 class="font-serif">Criptografia, Dinheiro, Contabilidade e Sistemas Distribuídos</h1>
+					<h2>MSc Luís Puhl</h2>
+					<p><span class="font-mono">luis-puhl</span> at {github,linkedin}</p>
+					<p><span class="font-mono">luispuhl</span> at {the google mail service}</p>
+				</section>
+				<section slide-title="Conteúdo">
+					<h2>Conteúdo</h2>
+					<ol>
+						<li>Introdução à Criptomoeda</li>
+						<ul>
+							<li>Notas do curso <span class="italic">MIT 15.S12 Blockchain and Money</span></li>
+						</ul>
+						<li>Mercado atual</li>
+						<li>Implementação</li>
+						<li>Discussão</li>
+					</ol>
+				</section>
+				<section slide-title="Introdução" data-auto-animate>
+					<h2 data-id="crypto">Criptomoeda?!</h2>
+				</section>
+				<section slide-title="Introdução" data-auto-animate>
+					<h2 data-id="crypto"><span class="underline">Cripto</span> <span class="underline">moeda</span></h2>
+					<div class="flex">
+						<div class="flex-auto">
+							<h3 data-id="Criptografia">Criptografia</h3>
+						</div>
+						<div class="flex-auto">
+							<h3 data-id="Dinheiro">Dinheiro</h3>
+						</div>
+					</div>
+				</section>
+				<section slide-title="Introdução" data-auto-animate>
+					<h2 data-id="crypto" class="inset-x-0 top-0"><span class="underline">Cripto</span> <span class="underline">moeda</span></h2>
+					<div class="flex">
+						<div class="flex-auto">
+							<h3 data-id="Criptografia">Criptografia</h3>
+							<p class="fragment">
+								Comunicação na presença de adversários
+							</p>
+							<ul class="fragment">
+								<li data-id="César">Cifra de César (-50)
+									<a href="https://www.math.stonybrook.edu/~moira/mat331-spr10/papers/1987%20LucianoCryptology%20From%20Caesar%20Ciphers%20to.pdf">[1]</a>
+									<div class="fragment shrink">
+										$$
+										\begin{aligned}
+										E_{n}(x) &amp; =(x+n)\mod {26}\\
+										D_{n}(x) &amp; =(x-n)\mod {26}
+										\end{aligned}
+										$$
+									</div>
+									<pre class="fragment"><code>Plain  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+Cipher X Y Z A B C D E F G H I J K L M N O P Q R S T U V W</code></pre>
+									<pre class="fragment">Plaintext:  THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+Ciphertext: QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD</pre>
+								</li>
+							</ul>
+						</div>
+						<div class="flex-auto">
+							<h3 data-id="Dinheiro">Dinheiro</h3>
+						</div>
+					</div>
+				</section>
+				<section slide-title="Introdução" data-auto-animate>
+					<h2 data-id="crypto" class="inset-x-0 top-0"><span class="underline">Cripto</span> <span class="underline">moeda</span></h2>
+					<div class="flex">
+						<div class="flex-auto">
+							<h3 data-id="Criptografia">Criptografia</h3>
+							<p>
+								Comunicação na presença de adversários
+							</p>
+							<ul>
+								<li data-id="César">Cifra de César (-50)</li>
+								<li>Máquina Enigma (1920-1940)</li>
+							</ul>
+						</div>
+						<div class="flex-auto">
+							<h3 data-id="Dinheiro">Dinheiro</h3>
+						</div>
+					</div>
+				</section>
+				<section slide-title="Enigma" data-auto-animate>
+					<h4>Máquina Enigma</h4>
+					<img style="margin: auto; max-height: 70vh; max-width: 70vw;"
+					alt="Enigma (crittografia) - Museo scienza e tecnologia Milano"
+					data-src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg"
+					srcset="
+					https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg/220px-Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg 240w,
+					https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg/440px-Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg 440w,
+					https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg/550px-Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg 550w,
+					https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg/704px-Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg 704w,
+					https://upload.wikimedia.org/wikipedia/commons/b/bd/Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg 1040w
+					https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg/220px-Enigma_%28crittografia%29_-_Museo_scienza_e_tecnologia_Milano.jpg
+					"
+					>
+					<p style="font-size: 0.4rem">
+						<a href="https://commons.wikimedia.org/w/index.php?curid=47910919">
+							By Alessandro Nassiri - Museo della Scienza e della Tecnologia &quot;Leonardo da Vinci&quot;, CC BY-SA 4.0
+						</a>
+					</p>
+				</section>
+				<section slide-title="Introdução" data-auto-animate>
+					<h2 data-id="crypto" class="inset-x-0 top-0"><span class="underline">Cripto</span> <span class="underline">moeda</span></h2>
+					<div class="flex">
+						<div class="flex-auto">
+							<h3 data-id="Criptografia">Criptografia</h3>
+							<p>
+								Comunicação na presença de adversários
+							</p>
+							<ul>
+								<li>Cifra de César</li>
+								<li>Máquina Enigma</li>
+								<li>Criptografia Assimétrica</li>
+							</ul>
+						</div>
+						<div class="flex-auto">
+							<h3 data-id="Dinheiro">Dinheiro</h3>
+						</div>
+					</div>
+				</section>
+				<section slide-title="Introdução" data-auto-animate>
+					<h2 data-id="crypto">Criptomoeda?!</h2>
+					<ul>
+						<li>Criptografia</li>
+						<ul>
+							<li>Comunicação na presença de adversários</li>
+							<li>Cifra de César</li>
+							<li>Máquina Enigma</li>
+							<li>Criptografia Assimétrica</li>
+						</ul>
+						<li>Dinheiro</li>
+						<li>Contabilidade</li>
+						<li>Sistemas Distribuídos</li>
+					</ul>
+				</section>
+				<section slide-title="Notas do MIT">
+					<h2>
+						Notas do Curso 
+						<a href="https://ocw.mit.edu/courses/sloan-school-of-management/15-s12-blockchain-and-money-fall-2018/" class="italic">
+						MIT 15.S12 Blockchain and Money, Fall 2018
+						</a></h2>
+				</section>
+				<section></section>
+				
+				<section data-markdown slide-title="Failed DigiCash">
+					## Failed Cryptographic Digital Currencies:
+
+					- 1989 DigiCash (David Chaum)
+					- 1993 Mondex (National Westminster Bank)
+					- 1994 CyberCash (Lynch, Melton, Crocker & Wilson)
+					- 1996 E-gold (Gold & Silver Reserve)
+					- 1997 Hashcash (Adam Back)
+					- 1998 Bit Gold (Nick Szabo)
+					- 1998 B-Money (Wei Dai)
+					- 1999 Lucre (Ben Laurie)
+				</section>
+				
+				<section slide-title="Satoshi 2008">
+					<h2>Bitcoin: A Peer-to-Peer Electronic Cash System</h2>
+					<pre>Satoshi Nakamoto Sat, 01 Nov 2008 16:16:33 -0700
+Bitcoin P2P e-cash paper
+
+I've been working on a new electronic cash system that's fully
+peer-to-peer, with no trusted third party.
+
+The paper is available at: http://www.bitcoin.org/bitcoin.pdf</pre>
+<a class="text-xs" href="https://www.mail-archive.com/cryptography@metzdowd.com/msg09959.html">mail-archive</a>
+				</section>
 			</div>
 		</div>
 
 		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
@@ -31,9 +212,10 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				slideNumber: true,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMath.KaTeX, RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
 	</body>
