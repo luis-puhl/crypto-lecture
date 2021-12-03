@@ -395,7 +395,7 @@ The paper is available at: http://www.bitcoin.org/bitcoin.pdf</pre>
 				</section>
 
 				<section data-markdown>
-					## Desafio e Oportunidades no Setor Financeiro
+					## Desafios e Oportunidades no Setor Financeiro
 
 					- Repeated crises and instability
 					- Currency instabilities associated with unsound policies
@@ -438,6 +438,47 @@ The paper is available at: http://www.bitcoin.org/bitcoin.pdf</pre>
 				<section>
 					<h1>Mercado Atual</h1>
 				</section>
+				<section>
+					<h3 style="font-size: 1.3rem;">Total Cryptocurrency Market Cap</h3>
+
+					<img src="img/Cryptocurrency-Market-Cap.svg" alt="Cryptocurrency Market Cap">
+					
+					<span class="text-xs">
+						By <a href="https://coinmarketcap.com/charts/">coinmarketcap.com</a>
+					</span>
+				</section>
+				<section>
+					<h3 style="font-size: 1.3rem;">Cryptocurrency Market Cap</h3>
+
+					<img src="img/Cryptocurrency-Market-Cap.png" alt="Market Cap">
+					
+					<span class="text-xs">
+						By <a href="https://coinmarketcap.com/charts/">coinmarketcap.com</a>
+					</span>
+				</section>
+				<section>
+					<h3 style="font-size: 1.3rem;">Bitcoin Dominance Chart</h3>
+
+					<img src="img/Bitcoin-Dominance-Chart.svg" alt="Bitcoin Dominance Chart">
+					
+					<span class="text-xs">
+						By <a href="https://coinmarketcap.com/charts/">coinmarketcap.com</a>
+					</span>
+				</section>
+				<section>
+					<h3>Distribuição em Pools da rede bitcoin</h3>
+
+					<img src="img/BTC-by-pool.png" alt="Pool Distribution (calulate by blocks)">
+					<span class="text-xs">
+						By <a href="https://btc.com/stats/pool?pool_mode=month">btc.com</a>
+					</span>
+					
+					<!-- <img src="img/coin-dance-allhashthisweek.svg" alt="Total Bitcoin Hash Rate by Mining Pool">
+					
+					<span class="text-xs">
+						By <a href="https://coin.dance/blocks/allhashthisweek">coin.dance</a>
+					</span> -->
+				</section>
 				
 				<section data-markdown>
 					# Implementação
@@ -467,10 +508,133 @@ def mine_proof_of_work(block: 'Block') -> 'Block':
 				</section>
 				<section data-auto-animate>
 					<h2>Implementação Ledger (livro-caixa)</h2>
+
+					<ul>
+						<li class="fragment">
+							Uma Entrada
+						</li>
+					</ul>
+					<table class="fragment">
+						<thead>
+							<tr><td>Data</td><td>Descrição</td><td>Valor</td></tr>
+						</thead>
+						<tbody>
+							<tr><td>2021-11-25</td><td>Malte</td><td>$-40$</td></tr>
+							<tr><td>2021-11-25</td><td>Lúpulo</td><td>$-20$</td></tr>
+							<tr><td>2021-11-25</td><td>Levedura</td><td>$-50$</td></tr>
+							<tr><td>2021-11-25</td><td>Gas</td><td>$-2$</td></tr>
+							<tr><td>2021-12-03</td><td>Venda Barril</td><td>$+250$</td></tr>
+						</tbody>
+					</table>
+				</section>
+				<section data-auto-animate>
+					<h2>Implementação Ledger (livro-caixa)</h2>
+
+					<ul>
+						<li>
+							Uma Entrada
+						</li>
+						<li class="fragment">
+							Dupla Entrada
+						</li>
+					</ul>
+					<img class="fragment" src="https://www.zoho.com/books/accounting-terms/images/double-entry-bookkeeping.png" alt="">
+				</section>
+				<section data-auto-animate>
+					<h2>Implementação Ledger (livro-caixa)</h2>
+
+					<ul>
+						<li>
+							Uma Entrada
+						</li>
+						<li>
+							Dupla Entrada
+						</li>
+					</ul>
+					
+					<table class="fragment text-xs">
+						<tbody>
+							<tr><td class="font-bold">Assets</td><td class="font-bold">Liabilities</td></tr>
+							<tr><td>em Caixa</td><td>Contas a pagar</td></tr>
+							<tr><td>Contas a receber</td><td class="font-bold">Equity</td></tr>
+							<tr><td>Estoque</td><td>Capital inicial</td></tr>
+							<tr><td>Ferramentas</td><td>Lucro</td></tr>
+							<tr><td></td><td></td></tr>
+							<tr><td>Soma $=$</td><td>Soma</td></tr>
+						</tbody>
+					</table>
+
+					<div class="fragment">
+						$$
+						\begin{aligned}
+						Assets &amp; = Liabilities + Capital\\
+						Capital &amp; = Assets - Liabilities
+						\end{aligned}
+						$$
+					</div>
+
+				</section>
+				<section data-auto-animate>
+					<h2>Implementação Ledger (livro-caixa)</h2>
+
+					<ul>
+						<li>
+							Uma Entrada
+						</li>
+						<li>
+							Dupla Entrada
+						</li>
+						<li class="fragment">
+							Tripla Entrada
+						</li>
+					</ul>
+
+					<p class="fragment italic">
+						Triple-Entry Bookkeeping and Momentum Accounting
+					</p>
+					<p class="fragment">
+						Armazena a transação em uma conta específica e anota o
+						$hash$ nas colunas de débito e crédito das contas envolvidas.
+					</p>
+				</section>
+
+				<section>
+					<h1>Smart Contracts</h1>
+
+					<ul>
+						<li class="fragment">Contrato</li>
+						<li class="fragment">Financiamento Coletivo</li>
+						<li class="fragment">NFT: Non Fungible Token</li>
+					</ul>
 				</section>
 				
 				<section>
 					<h1>Discussão</h1>
+
+					<ul>
+						<li class="fragment">
+							Para o que você pessoalmente usaria Criptomoedas?
+							<ul>
+								<li class="fragment">Diariamente</li>
+								<li class="fragment">Grandes Compras</li>
+								<li class="fragment">Investimento</li>
+							</ul>
+						</li>
+						<li class="fragment">
+							Você usaria Criptomoedas profissionalmente?
+
+							Exemplo: Desenvolver Dapps e Smart Contracts.
+						</li>
+						<li class="fragment">
+							Instituições financeiras vão adotar Criptomoedas?
+						</li>
+						<li class="fragment">
+							Governos vão adotar Criptomoedas?
+						</li>
+						<li class="fragment">
+							Reação quanto à legislação e fiscalização
+						</li>
+					</ul>
 				</section>
 			</div>
 		</div>
