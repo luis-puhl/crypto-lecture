@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto</title>
+    
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css">
+    
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="css/tailwind.min.css">
+    <style>
+        :root {
+            --r-heading-text-transform: none;
+            font-size: 40px;
+            --r-heading1-size: 2.0rem;
+            --r-heading2-size: 1.5rem;
+            --r-heading3-size: 1.25rem;
+            --r-heading4-size: 1.0rem;
+        }
+    
+        h1.font-serif {
+            font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <form action="/api/transaction" method="post">
+        <input type="number" name="target" id="target">
+        <input type="number" name="amount" id="amount">
+        <input type="submit" value="send">
+    </form>
+</body>
+</html>

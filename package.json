@@ -1,0 +1,27 @@
+{
+  "name": "cryto-lecture",
+  "version": "1.0.0",
+  "description": "## Notes from *MIT 15.S12 Blockchain and Money, Fall 2018*",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luis-puhl/cryto-lecture.git"
+  },
+  "author": "luis-puhl",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/luis-puhl/cryto-lecture/issues"
+  },
+  "homepage": "https://github.com/luis-puhl/cryto-lecture#readme"
+}
