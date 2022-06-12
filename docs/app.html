@@ -7,11 +7,11 @@
     <title>Crypto</title>
     
     <link rel="stylesheet" href="dist/reset.css">
-    <link rel="stylesheet" href="dist/reveal.css">
-    <link rel="stylesheet" href="dist/theme/white.css">
+    <!-- <link rel="stylesheet" href="dist/reveal.css"> -->
+    <!-- <link rel="stylesheet" href="dist/theme/white.css"> -->
     
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <!-- <link rel="stylesheet" href="plugin/highlight/monokai.css"> -->
     <link rel="stylesheet" href="css/tailwind.min.css">
     <style>
         :root {
@@ -22,17 +22,33 @@
             --r-heading3-size: 1.25rem;
             --r-heading4-size: 1.0rem;
         }
-    
-        h1.font-serif {
-            font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-        }
     </style>
 </head>
 <body>
-    <form action="/api/transaction" method="post">
-        <input type="number" name="target" id="target">
-        <input type="number" name="amount" id="amount">
-        <input type="submit" value="send">
+    <form action="" method="">
+        <input type="submit" value="new wallet" class="px-4 py-2 font-bold text-white bg-blue-500 rounded bg-blue-700-hover">
     </form>
+    <form action="" method="">
+        <input type="submit" value="See transactions"
+            class="px-4 py-2 font-bold text-white bg-blue-500 rounded bg-blue-700-hover">
+    </form>
+    <form action="" method="">
+        <input type="submit" value="Validate transactions"
+            class="px-4 py-2 font-bold text-white bg-blue-500 rounded bg-blue-700-hover">
+    </form>
+    <form action="" method="">
+        <input type="submit" value="Mine"
+            class="px-4 py-2 font-bold text-white bg-blue-500 rounded bg-blue-700-hover">
+    </form>
+    <section>
+        <h1>Wallet <span id="wallet-id"></span></h1>
+        <p>Public key (address): <span id="pub"></span></p>
+        <p>Private key: <span id="secret"></span></p>
+        <form action="/api/transaction" method="post">
+            <input type="number" name="target" id="target" placeholder="target address">
+            <input type="number" name="amount" id="amount" placeholder="amount">
+            <input type="submit" value="send coin" class="px-4 py-2 font-bold text-white bg-blue-500 rounded bg-blue-700-hover">
+        </form>
+    </section>
 </body>
 </html>
